@@ -11,7 +11,7 @@ def run():
     """
     Example command:
     ```
-    torchrun --nproc_per_node=8 offline_batch_inference_torchrun.py
+    torchrun --nproc_per_node=8 /fs-computility/ai-shen/puyuan/code/sglang/examples/runtime/engine/offline_batch_inference_torchrun.py
     ```
     """
 
@@ -41,7 +41,8 @@ def run():
     dp_rank = device_mesh_cpu.get_local_rank("dp")
     _log(f"{tp_rank=} {tp_size=} ; {dp_rank=} {dp_size=}")
 
-    model_name, mem_fraction_static = "meta-llama/Llama-3.2-1B-Instruct", 0.1
+    model_name, mem_fraction_static = "Qwen/Qwen2.5-7B-Instruct", 0.1
+    # model_name, mem_fraction_static = "meta-llama/Llama-3.2-1B-Instruct", 0.1
     # model_name, mem_fraction_static = "meta-llama/Llama-3.1-70B-Instruct", 0.9 # test large models
     # model_name, mem_fraction_static = "deepseek-ai/DeepSeek-V2-Lite", 0.8
 

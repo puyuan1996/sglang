@@ -1,6 +1,7 @@
 """
 Usage:
-python offline_batch_inference_vlm.py --model-path Qwen/Qwen2-VL-7B-Instruct --chat-template=qwen2-vl
+# python offline_batch_inference_vlm.py --model-path Qwen/Qwen2-VL-7B-Instruct --chat-template=qwen2-vl
+python examples/runtime/engine/offline_batch_inference_vlm.py --model-path Qwen/Qwen2.5-VL-3B-Instruct --chat-template=qwen2-vl
 """
 
 import argparse
