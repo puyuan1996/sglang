@@ -11,7 +11,7 @@ def run():
     """
     Example command:
     ```
-    torchrun --nproc_per_node=8 /fs-computility/ai-shen/puyuan/code/sglang/examples/runtime/engine/offline_batch_inference_torchrun.py
+    torchrun  --master_port=29503 --nproc_per_node=4 /fs-computility/ai-shen/puyuan/code/sglang/examples/runtime/engine/offline_batch_inference_torchrun.py
     ```
     """
 
@@ -27,8 +27,10 @@ def run():
         f'start {local_rank=} {rank=} {world_size=} {sys.argv=} {os.environ.get("CUDA_VISIBLE_DEVICES")}'
     )
 
+    # tp_size = 4
+    # dp_size = 2
     tp_size = 4
-    dp_size = 2
+    dp_size = 1
     assert world_size == tp_size * dp_size
 
     device_mesh_kwargs = dict(
